@@ -1,237 +1,222 @@
-<title>Lavínia Rocha · Portfólio</title>
+<title>Lavínia Rocha</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@700;800&display=swap">
 
 <style>
 [hidden]{display:none!important}
 :root{
-  --blue:#1479DE;--blue-deep:#0D4F91;--blue-soft:#E8F1FC;
-  --navy:#091C2E;--navy-2:#102A44;--navy-3:#1B3A5C;
-  --ink:#0B1220;--paper:#FFFFFF;--bg:#F2F4F6;--line:#DDE2E8;--muted:#536071;
-  --ok:#03853F;--ok-bg:#E4F4EA;--warn:#9A5B00;--warn-bg:#FFF1D6;
-  --violet:#6C3FC9;--violet-soft:#EDE8F7;--teal:#0D7A6B;--teal-soft:#E0F4F1;
-  --font:"Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-  --font-t:"Sora","Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,Arial,sans-serif;
-  --elev:0 1px 2px rgba(9,28,46,.06),0 10px 28px -14px rgba(9,28,46,.22);
-  --elev-alta:0 2px 4px rgba(9,28,46,.08),0 18px 36px -14px rgba(20,121,222,.35);
-  --raio:14px;--nav-h:60px;--max:1080px;
+  --bg:#F7F7F5;--paper:#FFFFFF;--ink:#0D0D0D;--mid:#3D3D3D;--muted:#888;
+  --line:#E8E8E5;--blue:#1479DE;--blue-soft:#EBF3FD;--navy:#091C2E;
+  --font:"Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,sans-serif;
+  --font-d:"Sora","Plus Jakarta Sans",sans-serif;
+  --sh:0 1px 3px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.07);
+  --sh-h:0 2px 8px rgba(0,0,0,.08),0 20px 40px rgba(0,0,0,.12);
+  --r:16px;--max:1100px;
   color-scheme:light;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{background:var(--bg);color:var(--ink)}
 body{font-family:var(--font);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
-body::before{content:"";position:fixed;inset:0 0 auto;z-index:30;height:env(safe-area-inset-top,0px);background:var(--navy)}
-h1,h2,h3,.kicker{font-family:var(--font-t)}
-h1,h2,h3{text-wrap:balance;letter-spacing:-.01em}
-a{color:var(--blue)}
-:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+body::before{content:"";position:fixed;inset:0 0 auto;z-index:50;height:env(safe-area-inset-top,0px);background:var(--bg)}
+img{max-width:100%}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 
-.wrap{
-  max-width:var(--max);margin:0 auto;
-  padding-left:max(20px,env(safe-area-inset-left,0px));
-  padding-right:max(20px,env(safe-area-inset-right,0px));
-}
-@media(min-width:900px){.wrap{padding-inline:32px}}
+/* ── Layout ── */
+.wrap{max-width:var(--max);margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+@media(min-width:900px){.wrap{padding-inline:40px}}
 
 /* ── Nav ── */
-.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--navy);color:var(--paper)}
-.nav .wrap{min-height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{color:inherit;text-decoration:none}
-.brand-nome{font-family:var(--font-t);font-size:16px;font-weight:700;letter-spacing:-.02em}
-.brand-nome span{color:rgba(255,255,255,.45);font-weight:400}
-.nav-links{display:flex;gap:2px}
-.nav-links a{display:inline-flex;align-items:center;padding:0 12px;min-height:38px;color:rgba(255,255,255,.6);text-decoration:none;font-weight:600;font-size:13.5px;border-radius:7px;transition:color .15s,background .15s}
-.nav-links a:hover{color:var(--paper);background:rgba(255,255,255,.08)}
-@media(max-width:600px){.nav-links{display:none}}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;padding-block:0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;min-height:58px;border-bottom:1px solid transparent;transition:border-color .2s,background .2s,backdrop-filter .2s}
+nav.scrolled .nav-inner{background:rgba(247,247,245,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-color:var(--line)}
+.nav-name{font-family:var(--font-d);font-size:15px;font-weight:700;letter-spacing:-.02em;color:var(--ink)}
+.nav-links{display:flex;gap:0}
+.nav-links a{font-size:13.5px;font-weight:600;color:var(--muted);padding:0 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:8px;transition:color .15s,background .15s}
+.nav-links a:hover{color:var(--ink);background:rgba(0,0,0,.05)}
+@media(max-width:560px){.nav-links{display:none}}
 
 /* ── Hero ── */
-.hero{background:var(--navy);color:var(--paper);padding-block:60px 88px;position:relative;overflow:hidden}
-.hero-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(55% 70% at 72% 55%,rgba(20,121,222,.2) 0%,transparent 68%)}
-.kicker{display:inline-flex;align-items:center;gap:10px;margin-bottom:18px;font-size:12px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:#7EC3F9}
-.kicker::before{content:"";width:22px;height:3px;background:var(--blue);flex-shrink:0}
-.hero h1{font-size:clamp(30px,5vw,52px);font-weight:700;line-height:1.08;letter-spacing:-.03em;margin-bottom:20px}
-.hero h1 em{font-style:normal;color:#7EC3F9}
-.hero-bio{font-size:17px;color:rgba(255,255,255,.65);max-width:48ch;margin-bottom:36px;line-height:1.65}
-.pills{display:flex;flex-wrap:wrap;gap:8px}
-.pill{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border-radius:100px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.07);font-size:13px;font-weight:500;color:rgba(255,255,255,.7)}
-.pill i{width:7px;height:7px;border-radius:50%;background:var(--blue);flex-shrink:0}
+.hero{padding-block:72px 80px}
+.hero-label{font-size:12.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue);margin-bottom:20px}
+.hero h1{font-family:var(--font-d);font-size:clamp(44px,7vw,80px);font-weight:800;line-height:1.02;letter-spacing:-.04em;color:var(--ink);margin-bottom:24px}
+.hero h1 span{color:var(--muted)}
+.hero-sub{font-size:clamp(16px,2vw,19px);color:var(--mid);max-width:46ch;line-height:1.65;margin-bottom:40px}
+.hero-stack{display:flex;flex-wrap:wrap;gap:10px 20px;border-top:1px solid var(--line);padding-top:28px}
+.hero-stack span{font-size:13px;font-weight:600;color:var(--muted)}
+.hero-stack strong{color:var(--ink)}
 
-/* ── Section header ── */
-.sec-topo{padding-block:52px 32px}
-.sec-label{display:inline-flex;align-items:center;gap:10px;margin-bottom:10px;font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--blue)}
-.sec-label::before{content:"";width:20px;height:3px;background:var(--blue);flex-shrink:0}
-.sec-topo h2{font-size:clamp(22px,3vw,28px);font-weight:700;letter-spacing:-.025em}
-.sec-topo p{margin-top:7px;font-size:15px;color:var(--muted);max-width:52ch}
+/* ── Section ── */
+.sec{padding-block:64px}
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:36px;gap:16px}
+.sec-h h2{font-family:var(--font-d);font-size:clamp(22px,3vw,30px);font-weight:800;letter-spacing:-.03em}
+.sec-h-count{font-size:13px;font-weight:600;color:var(--muted)}
 
-/* ── Grid ── */
-.grid{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
-.grid-sm{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+/* ── Bento grid ── */
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.bento-feat{grid-column:span 2}
+@media(max-width:800px){.bento{grid-template-columns:1fr 1fr}.bento-feat{grid-column:span 2}}
+@media(max-width:520px){.bento{grid-template-columns:1fr}.bento-feat{grid-column:span 1}}
 
 /* ── Project card ── */
-.card{background:var(--paper);border-radius:var(--raio);overflow:hidden;box-shadow:var(--elev);transition:box-shadow .2s,transform .2s;display:flex;flex-direction:column;cursor:pointer}
-.card:hover{box-shadow:var(--elev-alta);transform:translateY(-3px)}
-.card:hover .card-h{color:var(--blue)}
-.card:hover .card-icon{background:var(--blue);color:var(--paper)}
-.card-capa{position:relative;padding:24px 24px 12px;min-height:148px;display:flex;flex-direction:column;background:var(--paper)}
-.card-num{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--muted);font-family:var(--font-t);margin-bottom:auto}
-.card-icon{position:absolute;right:20px;top:20px;width:44px;height:44px;border-radius:10px;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;transition:background .2s,color .2s}
-.card-graph{position:absolute;right:76px;top:20px;pointer-events:none}
-.card-graph svg{width:72px;height:32px}
-.card-graph .bar{fill:var(--blue);transform-box:fill-box;transform-origin:50% 100%;animation:growY 600ms cubic-bezier(.2,.8,.2,1) backwards}
-@keyframes growY{from{transform:scaleY(0)}}
-.card-h{margin-top:auto;padding-top:16px;font-size:19px;font-weight:700;line-height:1.15;letter-spacing:-.02em;font-family:var(--font-t);transition:color .2s}
-.card-corpo{flex:1;padding:0 24px 20px;display:flex;flex-direction:column;gap:10px}
-.card-desc{font-size:13.5px;color:var(--muted);line-height:1.55;margin-top:10px}
-.card-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto;padding-top:12px;border-top:1px solid var(--line)}
-.card-hint{font-size:12px;font-weight:600;color:var(--blue);display:flex;align-items:center;gap:5px;margin-top:4px}
-.tag{font-size:11px;font-weight:600;padding:3px 9px;border-radius:100px;border:1px solid var(--line);color:var(--muted);background:var(--bg)}
-.tag-blue{border-color:rgba(20,121,222,.3);color:var(--blue-deep);background:var(--blue-soft)}
-.tag-green{border-color:rgba(3,133,63,.3);color:var(--ok);background:var(--ok-bg)}
-.tag-teal{border-color:rgba(13,122,107,.3);color:var(--teal);background:var(--teal-soft)}
-.tag-vio{border-color:rgba(108,63,201,.3);color:var(--violet);background:var(--violet-soft)}
-.tag-warn{border-color:rgba(154,91,0,.3);color:var(--warn);background:var(--warn-bg)}
+.pcard{background:var(--paper);border-radius:var(--r);border:1px solid var(--line);padding:28px;cursor:pointer;transition:box-shadow .22s,transform .22s,border-color .22s;display:flex;flex-direction:column;min-height:220px}
+.pcard:hover{box-shadow:var(--sh-h);transform:translateY(-3px);border-color:transparent}
+.pcard-feat{min-height:260px}
+.pcard-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:auto}
+.pcard-num{font-family:var(--font-d);font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.06em}
+.pcard-arr{width:32px;height:32px;border-radius:8px;background:var(--bg);border:1px solid var(--line);display:grid;place-items:center;color:var(--muted);transition:background .15s,border-color .15s,color .15s;flex-shrink:0}
+.pcard:hover .pcard-arr{background:var(--ink);border-color:var(--ink);color:white}
+.pcard-body{padding-top:40px}
+.pcard-cat{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+.pcard-name{font-family:var(--font-d);font-size:clamp(17px,2vw,21px);font-weight:700;letter-spacing:-.025em;line-height:1.2;color:var(--ink);margin-bottom:10px}
+.pcard-desc{font-size:14px;color:var(--muted);line-height:1.6}
+.pcard-tags{margin-top:18px;display:flex;flex-wrap:wrap;gap:6px}
+.ptag{font-size:11.5px;font-weight:600;color:var(--mid);border:1px solid var(--line);border-radius:6px;padding:3px 9px;background:var(--bg)}
 
-/* ── Automation card ── */
-.auto-card{background:var(--paper);border-radius:var(--raio);box-shadow:var(--elev);display:grid;grid-template-columns:4px 1fr;overflow:hidden;transition:box-shadow .2s,transform .2s}
-.auto-card:hover{box-shadow:var(--elev-alta);transform:translateY(-2px)}
-.auto-faixa{background:var(--blue)}
-.auto-corpo{padding:18px 20px;display:flex;flex-direction:column;gap:8px}
-.auto-top{display:flex;align-items:flex-start;gap:12px}
-.auto-ico{width:36px;height:36px;border-radius:8px;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;flex-shrink:0}
-.auto-info{flex:1}
-.auto-h{font-size:15px;font-weight:700;letter-spacing:-.01em;line-height:1.25;font-family:var(--font-t)}
-.auto-when{font-size:11.5px;font-weight:600;color:var(--muted);margin-top:2px}
-.auto-desc{font-size:13px;color:var(--muted);line-height:1.5}
+/* ── Automations: numbered list ── */
+.auto-list{display:flex;flex-direction:column;gap:0}
+.auto-row{display:grid;grid-template-columns:48px 1fr auto;align-items:start;padding-block:20px;border-bottom:1px solid var(--line);gap:16px;transition:background .15s;border-radius:8px;padding-inline:4px}
+.auto-row:last-child{border-bottom:none}
+.auto-row:hover{background:rgba(0,0,0,.025)}
+.auto-n{font-family:var(--font-d);font-size:22px;font-weight:800;color:var(--line);line-height:1}
+.auto-info{}
+.auto-name{font-size:15px;font-weight:700;color:var(--ink);letter-spacing:-.01em;line-height:1.3;margin-bottom:4px}
+.auto-desc{font-size:13.5px;color:var(--muted);line-height:1.5}
+.auto-stack{font-size:12px;font-weight:600;color:var(--blue);white-space:nowrap;padding-top:3px}
 
-/* ── OSS card ── */
-.oss-card{background:var(--paper);border-radius:var(--raio);box-shadow:var(--elev),inset 4px 0 0 var(--violet);padding:24px 28px;display:flex;gap:20px;align-items:flex-start;transition:box-shadow .2s;text-decoration:none;color:inherit;max-width:640px}
-.oss-card:hover{box-shadow:var(--elev-alta),inset 4px 0 0 var(--violet)}
-.oss-ico{width:44px;height:44px;border-radius:10px;background:var(--violet-soft);color:var(--violet);display:grid;place-items:center;flex-shrink:0}
-.oss-h{font-size:18px;font-weight:700;letter-spacing:-.01em;margin-bottom:6px;font-family:var(--font-t)}
-.oss-desc{font-size:14px;color:var(--muted);line-height:1.55;margin-bottom:12px}
-.oss-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--violet);text-decoration:underline;text-underline-offset:3px}
+/* ── OSS ── */
+.oss-block{background:var(--navy);border-radius:var(--r);padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;text-decoration:none;transition:opacity .15s}
+.oss-block:hover{opacity:.93}
+.oss-left{}
+.oss-eyebrow{font-size:11.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:10px}
+.oss-name{font-family:var(--font-d);font-size:22px;font-weight:700;color:white;letter-spacing:-.02em;margin-bottom:8px}
+.oss-desc{font-size:14px;color:rgba(255,255,255,.6);line-height:1.6;max-width:50ch}
+.oss-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.oss-tag{font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:6px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.12)}
+.oss-cta{font-size:14px;font-weight:700;color:white;white-space:nowrap;display:flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.15);transition:background .15s;flex-shrink:0}
+.oss-cta:hover{background:rgba(255,255,255,.2)}
 
-/* ── MODAL ── */
-.modal-overlay{position:fixed;inset:0;z-index:100;display:flex;align-items:flex-end;justify-content:center;padding:16px;background:rgba(9,28,46,.55);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .25s}
+/* ── Footer ── */
+footer{border-top:1px solid var(--line);padding-block:28px}
+.foot-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.foot-name{font-family:var(--font-d);font-size:14px;font-weight:700;color:var(--ink)}
+.foot-links{display:flex;gap:20px;list-style:none}
+.foot-links a{font-size:13px;color:var(--muted);transition:color .15s}
+.foot-links a:hover{color:var(--ink)}
+
+/* ── Divider ── */
+.div{border:none;border-top:1px solid var(--line)}
+
+/* ── MODAL (drawer à direita) ── */
+.modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(13,13,13,.4);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity .25s}
 .modal-overlay.open{opacity:1;pointer-events:all}
-.modal{background:var(--paper);border-radius:20px 20px 16px 16px;width:100%;max-width:620px;max-height:88vh;display:flex;flex-direction:column;overflow:hidden;transform:translateY(32px);transition:transform .28s cubic-bezier(.2,.8,.2,1);box-shadow:0 24px 64px rgba(9,28,46,.3)}
-.modal-overlay.open .modal{transform:translateY(0)}
-.modal-header{background:var(--navy);color:var(--paper);padding:24px 24px 20px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-shrink:0}
-.modal-icon{width:48px;height:48px;border-radius:12px;background:rgba(20,121,222,.3);color:#7EC3F9;display:grid;place-items:center;flex-shrink:0}
-.modal-title-wrap{flex:1}
-.modal-category{font-size:11.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:5px}
-.modal-title{font-family:var(--font-t);font-size:20px;font-weight:700;letter-spacing:-.02em;line-height:1.2}
-.modal-close{width:36px;height:36px;border-radius:8px;border:none;background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);cursor:pointer;display:grid;place-items:center;transition:background .15s,color .15s;flex-shrink:0}
-.modal-close:hover{background:rgba(255,255,255,.18);color:var(--paper)}
-.modal-body{padding:24px;overflow-y:auto;display:flex;flex-direction:column;gap:22px}
-.modal-sec-label{font-size:11px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:var(--blue);margin-bottom:8px;display:flex;align-items:center;gap:8px}
-.modal-sec-label::before{content:"";width:16px;height:2px;background:var(--blue)}
-.modal-tags{display:flex;flex-wrap:wrap;gap:6px}
-.modal-layout{font-size:14px;color:var(--ink);line-height:1.6;padding:12px 14px;background:var(--bg);border-radius:8px;border-left:3px solid var(--blue)}
-.modal-features{list-style:none;display:flex;flex-direction:column;gap:6px}
-.modal-features li{font-size:14px;color:var(--muted);padding-left:18px;position:relative;line-height:1.5}
-.modal-features li::before{content:"→";position:absolute;left:0;color:var(--blue);font-weight:700;font-size:12px;top:2px}
-.modal-challenge{font-size:14px;color:var(--ink);line-height:1.6;padding:12px 14px;background:var(--violet-soft);border-radius:8px;border-left:3px solid var(--violet)}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(520px,100vw);background:var(--paper);box-shadow:-4px 0 40px rgba(0,0,0,.12);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.modal-overlay.open .drawer{transform:translateX(0)}
+.drawer-head{padding:28px 28px 20px;border-bottom:1px solid var(--line);display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-shrink:0}
+.drawer-eyebrow{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
+.drawer-title{font-family:var(--font-d);font-size:20px;font-weight:700;letter-spacing:-.02em;line-height:1.25}
+.drawer-close{width:36px;height:36px;border:1px solid var(--line);border-radius:9px;background:none;cursor:pointer;display:grid;place-items:center;color:var(--muted);transition:background .15s,color .15s;flex-shrink:0}
+.drawer-close:hover{background:var(--ink);color:white;border-color:var(--ink)}
+.drawer-body{padding:28px;overflow-y:auto;display:flex;flex-direction:column;gap:28px}
+.d-sec-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.d-stack{display:flex;flex-wrap:wrap;gap:7px}
+.d-stag{font-size:12px;font-weight:600;padding:4px 11px;border-radius:7px;border:1px solid var(--line);color:var(--mid);background:var(--bg)}
+.d-layout{font-size:14px;color:var(--mid);line-height:1.65;padding:14px 16px;background:var(--bg);border-radius:10px;border-left:3px solid var(--blue)}
+.d-features{list-style:none;display:flex;flex-direction:column;gap:9px}
+.d-features li{font-size:14px;color:var(--mid);padding-left:16px;position:relative;line-height:1.55}
+.d-features li::before{content:"—";position:absolute;left:0;color:var(--blue);font-weight:700}
+.d-challenge{font-size:14px;color:var(--mid);line-height:1.65;padding:14px 16px;background:#FFFBF0;border-radius:10px;border-left:3px solid #E8A020}
 
-/* ── Misc ── */
-.sep{border:none;border-top:1px solid var(--line);margin:0}
-footer{background:var(--navy);color:rgba(255,255,255,.6);padding-block:28px;margin-top:64px}
-.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
-.footer-nome{font-family:var(--font-t);font-weight:700;font-size:15px;color:var(--paper)}
-.footer-links{display:flex;gap:20px;list-style:none}
-.footer-links a{font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;transition:color .15s}
-.footer-links a:hover{color:var(--paper)}
-
+/* ── Fade in ── */
 @media(prefers-reduced-motion:no-preference){
-  .fade{opacity:0;transform:translateY(12px);transition:opacity .4s,transform .4s}
+  .fade{opacity:0;transform:translateY(10px);transition:opacity .4s,transform .4s}
   .fade.on{opacity:1;transform:none}
 }
 @media(prefers-reduced-motion:reduce){.fade{opacity:1;transform:none}}
 @media(max-width:560px){
-  .hero{padding-block:40px 60px}
-  .sec-topo{padding-block:40px 24px}
-  .grid,.grid-sm{grid-template-columns:1fr}
-  .modal-overlay{padding:0;align-items:flex-end}
-  .modal{border-radius:20px 20px 0 0;max-height:92vh}
+  .hero{padding-block:48px 56px}
+  .sec{padding-block:48px}
+  .oss-block{padding:24px}
+  .oss-cta{display:none}
+  .drawer-head,.drawer-body{padding:20px}
 }
 </style>
 
 <!-- NAV -->
-<nav class="nav">
+<nav id="nav">
   <div class="wrap">
-    <a class="brand" href="#"><span class="brand-nome">Lavínia Rocha <span>· Portfólio</span></span></a>
-    <nav class="nav-links">
-      <a href="#dashboards">Dashboards</a>
-      <a href="#automacoes">Automações</a>
-      <a href="#oss">Open Source</a>
-    </nav>
+    <div class="nav-inner">
+      <span class="nav-name">Lavínia Rocha</span>
+      <div class="nav-links">
+        <a href="#trabalhos">Trabalhos</a>
+        <a href="#automacoes">Automações</a>
+        <a href="#oss">Open Source</a>
+      </div>
+    </div>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-glow" aria-hidden="true"></div>
   <div class="wrap">
-    <p class="kicker">Analytics · Business Intelligence</p>
-    <h1>Dados que orientam<br><em>decisões comerciais.</em></h1>
-    <p class="hero-bio">Dashboards Power BI e automações Python que times de vendas usam todos os dias — controle de metas, pipeline, projeções e reports automáticos.</p>
-    <div class="pills">
-      <span class="pill"><i></i>Power BI · DAX</span>
-      <span class="pill"><i></i>Python · SQL</span>
-      <span class="pill"><i></i>Automações &amp; Infra</span>
-      <span class="pill"><i></i>6+ dashboards em produção</span>
+    <p class="hero-label">Analytics · Business Intelligence</p>
+    <h1>Dados que times<br>de vendas <span>usam.</span></h1>
+    <p class="hero-sub">Construo dashboards Power BI e automações Python que viram rotina — acompanhamento de metas, pipeline, projeções e reports que chegam sozinhos.</p>
+    <div class="hero-stack">
+      <span><strong>Power BI</strong> · DAX</span>
+      <span><strong>Python</strong> · SQL</span>
+      <span><strong>PostgreSQL</strong> · Docker</span>
+      <span><strong>6+</strong> dashboards em produção</span>
     </div>
   </div>
 </section>
 
-<!-- DASHBOARDS -->
-<section id="dashboards">
+<hr class="div">
+
+<!-- TRABALHOS -->
+<section class="sec" id="trabalhos">
   <div class="wrap">
-    <div class="sec-topo">
-      <p class="sec-label">Dashboards</p>
-      <h2>Power BI em produção</h2>
-      <p>Clique em qualquer card para ver como foi construído.</p>
+    <div class="sec-h">
+      <h2>Trabalhos</h2>
+      <span class="sec-h-count">6 projetos</span>
     </div>
-    <ul class="grid" id="listaPBI"></ul>
+    <div class="bento" id="bentoPBI"></div>
   </div>
 </section>
 
-<hr class="sep">
+<hr class="div">
 
 <!-- AUTOMAÇÕES -->
-<section id="automacoes">
+<section class="sec" id="automacoes">
   <div class="wrap">
-    <div class="sec-topo">
-      <p class="sec-label">Automações</p>
-      <h2>Reports automáticos via Python + WhatsApp</h2>
-      <p>Rodando em servidor — sem abrir o computador.</p>
+    <div class="sec-h">
+      <h2>Automações</h2>
+      <span class="sec-h-count">Python · rodando em servidor</span>
     </div>
-    <ul class="grid-sm" id="listaAuto"></ul>
+    <div class="auto-list" id="listaAuto"></div>
   </div>
 </section>
 
-<hr class="sep">
+<hr class="div">
 
 <!-- OSS -->
-<section id="oss">
+<section class="sec" id="oss">
   <div class="wrap">
-    <div class="sec-topo">
-      <p class="sec-label">Open Source</p>
-      <h2>Projeto público</h2>
-    </div>
-    <a class="oss-card fade" href="https://github.com/laviniarochaprec/live-meeting-fact-checker" target="_blank" rel="noopener">
-      <span class="oss-ico">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/><path d="M8 11h6M11 8v6"/></svg>
-      </span>
-      <div>
-        <div class="oss-h">Live Meeting Fact Checker</div>
-        <p class="oss-desc">Escuta reuniões em tempo real e detecta números incorretos no momento em que são ditos. Combina Whisper, WebAssembly e LLMs.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px">
-          <span class="tag tag-teal">Python</span><span class="tag">Whisper</span><span class="tag tag-vio">LLM</span><span class="tag">WebAssembly</span>
+    <div class="sec-h"><h2>Open Source</h2></div>
+    <a class="oss-block fade" href="https://github.com/laviniarochaprec/live-meeting-fact-checker" target="_blank" rel="noopener">
+      <div class="oss-left">
+        <p class="oss-eyebrow">Projeto público · GitHub</p>
+        <p class="oss-name">Live Meeting Fact Checker</p>
+        <p class="oss-desc">Escuta reuniões em tempo real e detecta números incorretos no momento em que são ditos — combina Whisper, WebAssembly e LLMs.</p>
+        <div class="oss-tags">
+          <span class="oss-tag">Python</span><span class="oss-tag">Whisper</span><span class="oss-tag">LLM</span><span class="oss-tag">WebAssembly</span><span class="oss-tag">Open Source</span>
         </div>
-        <span class="oss-link">Ver no GitHub →</span>
+      </div>
+      <div class="oss-cta">
+        Ver no GitHub
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </div>
     </a>
   </div>
@@ -239,9 +224,9 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding-block:28px;marg
 
 <footer>
   <div class="wrap">
-    <div class="footer-inner">
-      <span class="footer-nome">Lavínia Rocha</span>
-      <ul class="footer-links">
+    <div class="foot-inner">
+      <span class="foot-name">Lavínia Rocha · 2026</span>
+      <ul class="foot-links">
         <li><a href="https://github.com/laviniarochaprec" target="_blank">GitHub</a></li>
         <li><a href="https://linkedin.com/in/laviniarochaprec" target="_blank">LinkedIn</a></li>
       </ul>
@@ -249,233 +234,186 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding-block:28px;marg
   </div>
 </footer>
 
-<!-- MODAL -->
-<div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-  <div class="modal">
-    <div class="modal-header">
-      <span class="modal-icon" id="modal-icon" aria-hidden="true"></span>
-      <div class="modal-title-wrap">
-        <div class="modal-category">Dashboard · Power BI</div>
-        <div class="modal-title" id="modal-title"></div>
+<!-- DRAWER -->
+<div class="modal-overlay" id="modal">
+  <div class="drawer" role="dialog" aria-modal="true" aria-labelledby="d-title">
+    <div class="drawer-head">
+      <div>
+        <p class="drawer-eyebrow">Dashboard · Power BI</p>
+        <p class="drawer-title" id="d-title"></p>
       </div>
-      <button class="modal-close" id="modal-close" aria-label="Fechar">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      <button class="drawer-close" id="d-close" aria-label="Fechar">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
       </button>
     </div>
-    <div class="modal-body" id="modal-body"></div>
+    <div class="drawer-body" id="d-body"></div>
   </div>
 </div>
 
 <script>
-/* ══════════════════════════════════════════════
-   DADOS
-══════════════════════════════════════════════ */
 const PBI = [
-  {
-    id:"metas", nome:"Painel de Metas de Vendas",
-    desc:"Acompanhamento individual e por equipe, com login próprio para cada usuário.",
-    tags:[["Power BI","blue"],["DAX","blue"],["SQL",""],["Row-Level Security","warn"]],
-    detalhe:{
-      stack:["Power BI","DAX","SQL","DirectQuery"],
-      layout:"Duas páginas: visão individual (cartão de meta + funil) e visão de equipe (ranking + decomposição por período). Paleta de alerta visual (verde/amarelo/vermelho) gerada por medida DAX.",
+  { feat:true, id:"metas", cat:"Power BI · Vendas",
+    nome:"Painel de Metas de Vendas",
+    desc:"Dashboard de metas que o time de vendas abre todo dia — cada vendedor vê o próprio resultado com login próprio.",
+    tags:["Power BI","DAX","SQL","Row-Level Security"],
+    det:{
+      stack:["Power BI","DAX","SQL","DirectQuery","Gateway"],
+      layout:"Duas páginas: visão individual (cartão de meta + funil de conversão) e visão da equipe (ranking + decomposição por período). Paleta de alerta visual gerada por medida DAX.",
       features:["Login individual com Row-Level Security — cada usuário vê só a própria linha","Visão de gestão sem RLS, com drill-down por equipe","Acelerador de comissão calculado dinamicamente em DAX","Trava automática no penúltimo dia útil do mês"],
-      desafio:"Modelar o acelerador progressivo em DAX puro sem criar tabela paramétrica: a lógica inteira ficou em uma medida com SWITCH() aninhado sobre o percentual acumulado."
+      desafio:"Modelar o acelerador progressivo em DAX puro — a lógica inteira ficou em uma medida com SWITCH() aninhado sobre o percentual acumulado, sem precisar de tabela paramétrica."
     }
   },
-  {
-    id:"onepage", nome:"Painel Executivo de Resultados",
-    desc:"Visão do mês para a liderança, com drill-down por equipe e produto.",
-    tags:[["Power BI","blue"],["DAX","blue"],["SQL",""],["CRM","teal"]],
-    detalhe:{
+  { feat:false, id:"onepage", cat:"Power BI · Executivo",
+    nome:"Painel Executivo de Resultados",
+    desc:"Visão do mês para a liderança com drill-down por equipe e produto, integrada ao CRM.",
+    tags:["Power BI","DAX","SQL","API"],
+    det:{
       stack:["Power BI","DAX","SQL","API do CRM"],
-      layout:"Página única com KPIs no topo, gráfico de tendência semanal, tabela filtrada por equipe e mapa de calor por produto. Layout responsivo para leitura em tablet.",
-      features:["Atualização automática 2x por dia via gateway","Alertas visuais de desvio (semáforo por equipe)","Comparativo YoY e MoM em cada KPI","Tooltip personalizado com decomposição do número"],
-      desafio:"Sincronizar dados de três fontes (CRM, planilha de metas, banco de dados) em refresh único sem duplicar linhas — resolvido com um modelo estrela e chave composta em Power Query."
+      layout:"Página única: KPIs no topo, tendência semanal, tabela filtrada por equipe e mapa de calor por produto.",
+      features:["Atualização automática 2× ao dia via gateway","Alertas visuais de desvio por equipe","Comparativo YoY e MoM em cada KPI","Tooltip com decomposição do número"],
+      desafio:"Sincronizar dados de três fontes (CRM, planilha de metas, banco) em refresh único sem duplicar linhas — resolvido com modelo estrela e chave composta em Power Query."
     }
   },
-  {
-    id:"projecao", nome:"Projeção de Performance",
-    desc:"Projeta o resultado final do mês com régua visual e histórico.",
-    tags:[["Power BI","blue"],["DAX","blue"],["Python","green"]],
-    detalhe:{
+  { feat:false, id:"projecao", cat:"Power BI · Projeção",
+    nome:"Projeção de Performance",
+    desc:"Projeta o resultado final do mês com régua visual e histórico — congela no último dia útil.",
+    tags:["Power BI","DAX","Python"],
+    det:{
       stack:["Power BI","DAX","Python (pré-processamento)","SQL"],
-      layout:"Três blocos: régua do mês (% atingido vs. projetado), cartão de simulação de cenários e histórico dos últimos 12 meses em gráfico de barras empilhadas.",
-      features:["Projeção baseada no ritmo dos dias úteis já passados","Trava automática: congela o número no último dia útil","Simulação de cenário: o usuário ajusta % diário e vê o impacto no resultado final","Histórico persistido mesmo com troca de período"],
-      desafio:"Calcular dias úteis restantes em DAX sem depender de tabela calendário externa — feito com uma série de CALCULATE() com filtro de dia da semana e lista de feriados embutida na medida."
+      layout:"Três blocos: régua do mês (% atingido vs. projetado), cartão de simulação de cenários, histórico dos últimos 12 meses.",
+      features:["Projeção baseada no ritmo dos dias úteis já passados","Trava: congela o número no último dia útil","Simulação: o usuário ajusta % diário e vê o impacto final","Histórico persistido mesmo com troca de período"],
+      desafio:"Calcular dias úteis restantes em DAX sem tabela calendário externa — série de CALCULATE() com filtro de dia da semana e lista de feriados embutida na medida."
     }
   },
-  {
-    id:"prospeccao", nome:"Painel de Prospecção",
-    desc:"Performance individual de prospecção com login próprio e visão de gestão.",
-    tags:[["Power BI","blue"],["DAX","blue"],["Row-Level Security","warn"]],
-    detalhe:{
+  { feat:false, id:"prospeccao", cat:"Power BI · Prospecção",
+    nome:"Painel de Prospecção",
+    desc:"Performance de prospecção individual com login próprio e visão de gestão sem restrição.",
+    tags:["Power BI","DAX","Row-Level Security"],
+    det:{
       stack:["Power BI","DAX","SQL"],
-      layout:"Visão individual: funil com taxas de conversão por etapa + cartão de meta de conexões. Visão de gestão: ranking + heatmap de horário de maior conversão.",
-      features:["Row-Level Security com dois perfis: individual e supervisão","Comparativo de conversão por período e por canal de entrada","Meta dinâmica: ajustável pelo gestor sem republish","Histórico de 12 meses por usuário"],
-      desafio:"Aplicar RLS que filtra a tabela de fatos E a tabela de metas ao mesmo tempo sem quebrar totais de equipe — resolvido com role separada para cada perfil e medida que detecta o contexto de filtro."
+      layout:"Visão individual: funil com taxas por etapa + meta de conexões. Visão gestão: ranking + heatmap de horário de maior conversão.",
+      features:["RLS com dois perfis: individual e supervisão","Comparativo de conversão por período e canal","Meta dinâmica ajustável sem republish","Histórico de 12 meses por usuário"],
+      desafio:"Aplicar RLS que filtra a tabela de fatos E a de metas sem quebrar totais de equipe — resolvido com role separada por perfil e medida que detecta o contexto de filtro."
     }
   },
-  {
-    id:"progressao", nome:"Progressão de Equipe",
+  { feat:false, id:"progressao", cat:"Power BI · Progressão",
+    nome:"Progressão de Equipe",
     desc:"Nível de cada vendedor na régua de progressão integrada ao modelo comercial.",
-    tags:[["Power BI","blue"],["DAX","blue"],["SQL",""]],
-    detalhe:{
+    tags:["Power BI","DAX","SQL"],
+    det:{
       stack:["Power BI","DAX","SQL"],
-      layout:"Tabela rankeada com indicador de nível (chip colorido) + curva de evolução mensal + filtro por equipe e período. Formato horizontal para leitura rápida em reunião.",
-      features:["Cálculo automático de nível por múltiplos critérios","Integrado ao modelo comercial: mesma fonte de verdade","Destaque visual para usuários em risco de rebaixamento","Histórico de mudança de nível por vendedor"],
-      desafio:"Modelar régua de múltiplos critérios com hierarquia de prioridade em DAX: se o critério A falha, não adianta o B passar — resolvido com RANKX() combinado com tabela de regras importada do banco."
+      layout:"Tabela rankeada com indicador de nível (chip colorido) + curva de evolução mensal + filtro por equipe.",
+      features:["Cálculo automático de nível por múltiplos critérios","Mesma fonte de verdade do modelo comercial","Destaque visual para usuários em risco de rebaixamento","Histórico de mudança de nível"],
+      desafio:"Modelar régua de múltiplos critérios com hierarquia de prioridade em DAX: RANKX() combinado com tabela de regras importada do banco."
     }
   },
-  {
-    id:"b2b", nome:"Operações de Parcerias",
-    desc:"Painel de parceiros e conversão B2B com autenticação Microsoft.",
-    tags:[["Power BI","blue"],["DAX","blue"],["B2B","teal"],["DirectQuery",""]],
-    detalhe:{
-      stack:["Power BI","DAX","DirectQuery","Azure AD / Microsoft SSO"],
-      layout:"Visão macro de portfólio de parceiros + drill-down por parceiro com histórico de conversão e carteira ativa. Acesso controlado por grupo do Azure AD.",
-      features:["Autenticação via Microsoft SSO — sem senha separada","DirectQuery: dados sempre atuais, sem refresh agendado","Segmentação por tier de parceiro e tipo de operação","Exportação de relatório detalhado por parceiro em PDF"],
-      desafio:"Manter DirectQuery sem travar o relatório para o usuário: queries SQL otimizadas com índices específicos para as colunas de filtro mais usadas, reduzindo o tempo de resposta de 8s para <2s."
+  { feat:false, id:"b2b", cat:"Power BI · B2B",
+    nome:"Operações de Parcerias",
+    desc:"Painel de parceiros e conversão B2B com autenticação Microsoft e dados sempre atuais.",
+    tags:["Power BI","DAX","DirectQuery","Azure AD"],
+    det:{
+      stack:["Power BI","DAX","DirectQuery","Azure AD / SSO"],
+      layout:"Visão macro de portfólio de parceiros + drill-down por parceiro com histórico de conversão.",
+      features:["Autenticação via Microsoft SSO — sem senha separada","DirectQuery: dados em tempo real, sem refresh","Segmentação por tier e tipo de operação","Exportação de relatório detalhado em PDF"],
+      desafio:"Manter DirectQuery sem travar o relatório: queries SQL com índices específicos para as colunas de filtro mais usadas, reduzindo o tempo de resposta de 8s para <2s."
     }
   },
 ];
 
 const AUTO = [
-  {id:"matinal", cor:"#1479DE", nome:"Report Semanal de Ranking", quando:"Segunda · 7h",      icon:"M12 3c1 3 4 4.5 4 9a4 4 0 0 1-8 0c0-2 1-3 1.5-4 .5 1.5 1.5 2 2.5 2-1-3 0-5 0-7z", stack:"Python · SQL · WhatsApp API",desc:"Ranking da semana e projeção do mês gerados automaticamente e enviados ao grupo de liderança."},
-  {id:"daily",   cor:"#1479DE", nome:"Report Diário de Performance",quando:"Ter–Sex · 7h (DU)", icon:"M4 5h16v11H9l-5 4z",           stack:"Python · SQL · WhatsApp API",desc:"Resumo diário de desempenho do time enviado antes do início do expediente."},
-  {id:"prev",    cor:"#0D7A6B", nome:"Previsão de Fechamento",     quando:"Seg–Sex · 18h (DU)", icon:"M3 17l6-6 4 4 8-8M15 7h6v6",   stack:"Python · SQL · WhatsApp API",desc:"Estimativa de fechamento do dia enviada à gestão ao final do expediente."},
-  {id:"vol",     cor:"#0D7A6B", nome:"Projeção de Volume Diário",  quando:"Seg–Sex · 8h30/13h", icon:"M22 12h-4l-3 9-6-18-3 9H2",    stack:"Python · SQL · WhatsApp API",desc:"Projeção de volume com base no ritmo parcial do dia, enviada em dois horários."},
-  {id:"preco",   cor:"#9A5B00", nome:"Alçada de Precificação",     quando:"Seg–Sex · 20h (DU)", icon:"M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82zM7 7h.01", stack:"Python · SQL · WhatsApp API",desc:"Report diário de alçada calculada automaticamente pela regra vigente do mês."},
-  {id:"casos",   cor:"#6C3FC9", nome:"Planilha de Casos Prioritários",quando:"Seg–Sex · 7h30 (DU)", icon:"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM9 13h7M9 17h5", stack:"Python · Excel Online API",desc:"Planilha de casos críticos gerada automaticamente e disponível para a supervisão antes do início do dia."},
+  {n:"01",nome:"Report Semanal de Ranking",   desc:"Ranking da semana e projeção do mês gerados e enviados automaticamente ao grupo de liderança.",stack:"Python · SQL · WhatsApp API"},
+  {n:"02",nome:"Report Diário de Performance",desc:"Resumo de desempenho do time enviado antes do início do expediente.",stack:"Python · SQL · WhatsApp API"},
+  {n:"03",nome:"Previsão de Fechamento",       desc:"Estimativa de fechamento do dia enviada à gestão ao final do expediente.",stack:"Python · SQL · WhatsApp API"},
+  {n:"04",nome:"Projeção de Volume Diário",    desc:"Projeção de volume com base no ritmo parcial do dia, enviada em dois horários.",stack:"Python · SQL · WhatsApp API"},
+  {n:"05",nome:"Alçada de Precificação",       desc:"Alçada calculada automaticamente pela regra vigente do mês e enviada ao time.",stack:"Python · SQL · WhatsApp API"},
+  {n:"06",nome:"Planilha de Casos Prioritários",desc:"Lista de casos críticos gerada automaticamente e disponível para a supervisão antes do início do dia.",stack:"Python · Excel Online API"},
 ];
 
-/* ══════════════════════════════════════════════
-   RENDERIZAÇÃO
-══════════════════════════════════════════════ */
-const svg = (d, w=22) => `<svg width="${w}" height="${w}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
-const ICONS = {
-  metas:      "M4 20V10M10 20V4M16 20v-7M22 20H2",
-  onepage:    "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z",
-  projecao:   "M23 6L13.5 15.5 8.5 10.5 1 18",
-  prospeccao: "M21 21l-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0",
-  progressao: "M3 20h5v-5h5v-5h5V5h3",
-  b2b:        "M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16",
-};
+/* ── Render PBI bento ── */
+const ico = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
 
-function grafico(id) {
-  let h = 7;
-  for (const c of id) h = (h * 31 + c.charCodeAt(0)) >>> 0;
-  const el = document.createElementNS("http://www.w3.org/2000/svg","svg");
-  el.setAttribute("viewBox","0 0 72 32");
-  for (let i = 0; i < 6; i++) {
-    h = (h * 1103515245 + 12345) >>> 0;
-    const alt = 8 + (h >>> 16) % 20;
-    const r = document.createElementNS("http://www.w3.org/2000/svg","rect");
-    Object.entries({x:i*12,y:32-alt,width:8,height:alt,rx:2}).forEach(([k,v])=>r.setAttribute(k,v));
-    r.setAttribute("opacity",(0.25 + i * 0.13).toFixed(2));
-    r.setAttribute("class","bar");
-    r.style.animationDelay = (i*55)+"ms";
-    el.append(r);
-  }
-  return el;
-}
-
-function renderPBI() {
-  const ul = document.getElementById("listaPBI");
-  PBI.forEach((p, i) => {
-    const li = document.createElement("li");
-    li.className = "card fade";
+function renderPBI(){
+  const g = document.getElementById("bentoPBI");
+  PBI.forEach((p,i)=>{
+    const li = document.createElement("div");
+    li.className = "pcard fade" + (p.feat?" pcard-feat bento-feat":"");
     li.innerHTML = `
-      <div class="card-capa">
-        <span class="card-num">0${i+1}</span>
-        <span class="card-icon">${svg(ICONS[p.id]||ICONS.metas)}</span>
-        <span class="card-graph"></span>
-        <h3 class="card-h">${p.nome}</h3>
+      <div class="pcard-top">
+        <span class="pcard-num">0${i+1}</span>
+        <span class="pcard-arr">${ico}</span>
       </div>
-      <div class="card-corpo">
-        <p class="card-desc">${p.desc}</p>
-        <div class="card-tags">${p.tags.map(([t,c])=>`<span class="tag${c?` tag-${c}`:''}">${t}</span>`).join('')}</div>
-        <span class="card-hint">${svg('M12 5v14M5 12l7 7 7-7',14)} Ver como foi construído</span>
+      <div class="pcard-body">
+        <p class="pcard-cat">${p.cat}</p>
+        <h3 class="pcard-name">${p.nome}</h3>
+        <p class="pcard-desc">${p.desc}</p>
+        <div class="pcard-tags">${p.tags.map(t=>`<span class="ptag">${t}</span>`).join("")}</div>
       </div>
     `;
-    li.querySelector(".card-graph").appendChild(grafico(p.id));
-    li.addEventListener("click", () => openModal(p));
-    ul.appendChild(li);
+    li.addEventListener("click",()=>openDrawer(p));
+    g.appendChild(li);
   });
 }
 
-function renderAuto() {
-  const ul = document.getElementById("listaAuto");
-  AUTO.forEach(a => {
-    const li = document.createElement("li");
-    li.className = "auto-card fade";
-    li.innerHTML = `
-      <div class="auto-faixa" style="background:${a.cor}"></div>
-      <div class="auto-corpo">
-        <div class="auto-top">
-          <span class="auto-ico" style="background:color-mix(in srgb,${a.cor} 12%,white);color:${a.cor}">${svg(a.icon,18)}</span>
-          <div class="auto-info">
-            <div class="auto-h">${a.nome}</div>
-            <div class="auto-when">${a.stack}</div>
-          </div>
-        </div>
+function renderAuto(){
+  const l = document.getElementById("listaAuto");
+  AUTO.forEach(a=>{
+    const d = document.createElement("div");
+    d.className = "auto-row fade";
+    d.innerHTML = `
+      <span class="auto-n">${a.n}</span>
+      <div class="auto-info">
+        <p class="auto-name">${a.nome}</p>
         <p class="auto-desc">${a.desc}</p>
       </div>
+      <span class="auto-stack">${a.stack}</span>
     `;
-    ul.appendChild(li);
+    l.appendChild(d);
   });
 }
 
-renderPBI();
-renderAuto();
+renderPBI(); renderAuto();
 
-/* ══════════════════════════════════════════════
-   MODAL
-══════════════════════════════════════════════ */
+/* ── Drawer ── */
 const overlay = document.getElementById("modal");
-const modalTitle = document.getElementById("modal-title");
-const modalIcon = document.getElementById("modal-icon");
-const modalBody = document.getElementById("modal-body");
+const dTitle = document.getElementById("d-title");
+const dBody = document.getElementById("d-body");
 
-function openModal(p) {
-  modalTitle.textContent = p.nome;
-  modalIcon.innerHTML = svg(ICONS[p.id]||ICONS.metas, 24);
-  const d = p.detalhe;
-  modalBody.innerHTML = `
+function openDrawer(p){
+  dTitle.textContent = p.nome;
+  const d = p.det;
+  dBody.innerHTML = `
     <div>
-      <div class="modal-sec-label">Stack</div>
-      <div class="modal-tags">${d.stack.map(s=>`<span class="tag tag-blue">${s}</span>`).join('')}</div>
+      <p class="d-sec-label">Stack</p>
+      <div class="d-stack">${d.stack.map(s=>`<span class="d-stag">${s}</span>`).join("")}</div>
     </div>
     <div>
-      <div class="modal-sec-label">Layout</div>
-      <div class="modal-layout">${d.layout}</div>
+      <p class="d-sec-label">Layout</p>
+      <div class="d-layout">${d.layout}</div>
     </div>
     <div>
-      <div class="modal-sec-label">Funcionalidades implementadas</div>
-      <ul class="modal-features">${d.features.map(f=>`<li>${f}</li>`).join('')}</ul>
+      <p class="d-sec-label">O que foi implementado</p>
+      <ul class="d-features">${d.features.map(f=>`<li>${f}</li>`).join("")}</ul>
     </div>
     <div>
-      <div class="modal-sec-label">Desafio interessante</div>
-      <div class="modal-challenge">${d.desafio}</div>
+      <p class="d-sec-label">Desafio interessante</p>
+      <div class="d-challenge">${d.desafio}</div>
     </div>
   `;
   overlay.classList.add("open");
-  document.body.style.overflow = "hidden";
+  document.body.style.overflow="hidden";
 }
+function closeDrawer(){overlay.classList.remove("open");document.body.style.overflow="";}
+document.getElementById("d-close").addEventListener("click",closeDrawer);
+overlay.addEventListener("click",e=>{if(e.target===overlay)closeDrawer();});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeDrawer();});
 
-function closeModal() {
-  overlay.classList.remove("open");
-  document.body.style.overflow = "";
-}
+/* ── Nav scroll ── */
+const navEl = document.getElementById("nav");
+window.addEventListener("scroll",()=>{navEl.classList.toggle("scrolled",window.scrollY>20)},{passive:true});
 
-document.getElementById("modal-close").addEventListener("click", closeModal);
-overlay.addEventListener("click", e => { if (e.target === overlay) closeModal(); });
-document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
-
-/* Fade-in on scroll */
-if (window.IntersectionObserver) {
-  const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("on"); obs.unobserve(e.target); } }), {threshold:.07});
-  document.querySelectorAll(".fade").forEach(el => obs.observe(el));
-} else {
-  document.querySelectorAll(".fade").forEach(el => el.classList.add("on"));
-}
+/* ── Fade in ── */
+if(window.IntersectionObserver){
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("on");obs.unobserve(e.target);}}),{threshold:.06});
+  document.querySelectorAll(".fade").forEach(el=>obs.observe(el));
+}else{document.querySelectorAll(".fade").forEach(el=>el.classList.add("on"));}
 </script>
